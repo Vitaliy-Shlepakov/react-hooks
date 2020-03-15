@@ -47,7 +47,7 @@ const GithubState = ({children}) => {
         setLoading();
         const response = await axios({
             method: 'GET',
-            url: `https://api.github.com/users/${name}/repos&per_page=5&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
+            url: `https://api.github.com/users/${name}?repos&per_page=5&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
         });
         dispatch({
             type: GET_REPOS,

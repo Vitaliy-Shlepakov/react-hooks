@@ -7,7 +7,7 @@ import {
 } from "../types";
 
 export const githubReducer = (state, action) => {
-    switch(state, action.type){
+    switch(action.type){
         case CLEAR_USERS:
             return {
                 ...state,
@@ -28,7 +28,7 @@ export const githubReducer = (state, action) => {
         case GET_USER:
             return {
                 ...state,
-                repos: action.payload,
+                user: action.payload,
                 loading: false
         };
         case SET_LOADING:
@@ -36,5 +36,7 @@ export const githubReducer = (state, action) => {
                 ...state,
                 loading: true
         };
+        default:
+            return {...state}
     }
 };
