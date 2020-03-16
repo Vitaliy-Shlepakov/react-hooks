@@ -1,10 +1,11 @@
 import React, {useContext, useEffect} from 'react';
 import {GithubContext} from "../../context/gihub/githubContext";
 import {Link} from "react-router-dom";
+import Repos from "../../components/Repos/Repos";
 
 const Profile = ({match}) => {
     const {getUser, getRepos, state} = useContext(GithubContext);
-    const {loading, user} = state;
+    const {loading, user, repos} = state;
     const urlName = match.params.name;
 
     useEffect(() => {
@@ -89,6 +90,8 @@ const Profile = ({match}) => {
                     </div>
                 </div>
             </div>
+
+            <Repos repos={repos}/>
         </>
     )
 };

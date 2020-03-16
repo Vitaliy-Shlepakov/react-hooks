@@ -22,7 +22,7 @@ const GithubState = ({children}) => {
 
         const response = await axios({
             method: 'GET',
-            url: `https://api.github.com/search/users?q=${value}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
+            url: `https://api.github.com/search/users?q=${value}&client_id=501bcf7b5eb21cb614f0&client_secret=81ddff898e73fccb1e9ac3f92a6bea48876e8f52`
         });
         //request
         dispatch({
@@ -35,7 +35,7 @@ const GithubState = ({children}) => {
         setLoading();
         const response = await axios({
             method: 'GET',
-            url: `https://api.github.com/users/${name}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
+            url: `https://api.github.com/users/${name}?client_id=501bcf7b5eb21cb614f0&client_secret=81ddff898e73fccb1e9ac3f92a6bea48876e8f52`
         });
         dispatch({
             type: GET_USER,
@@ -47,7 +47,7 @@ const GithubState = ({children}) => {
         setLoading();
         const response = await axios({
             method: 'GET',
-            url: `https://api.github.com/users/${name}?repos&per_page=5&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
+            url: `https://api.github.com/users/${name}/repos?per_page=5&client_id=501bcf7b5eb21cb614f0&client_secret=81ddff898e73fccb1e9ac3f92a6bea48876e8f52`
         });
         dispatch({
             type: GET_REPOS,
